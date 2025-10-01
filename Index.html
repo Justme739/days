@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrer le prénom 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #3a7bd5, #00d2ff); /* Bleu dégradé */
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background: #ffcc00;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ffaa00;
+    }
+
+    .error {
+      margin-top: 15px;
+      color: #ffdddd;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Entrez le prénom de la star du jour 🎉</h1>
+    <input type="text" id="nameInput" placeholder="Prénom ici">
+    <br>
+    <button onclick="checkName()">Valider</button>
+    <p class="error" id="errorMsg"></p>
+  </div>
+
+  <script>
+    function checkName() {
+      const name = document.getElementById("nameInput").value.trim().toLowerCase();
+      const correctName = "sylvie fleur"; // ✅ prénom correct
+
+      if (name === correctName) {
+        window.location.href = "anniversaire.html"; // redirection vers la page 2
+      } else {
+        document.getElementById("errorMsg").textContent = "Oups 😅 mauvais prénom ! Essaie encore 🎂";
+      }
+    }
+  </script>
+</body>
+</html>

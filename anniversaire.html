@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Joyeux Anniversaire 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #fff;
+      text-align: center;
+      background: url('photo.jpg') no-repeat center center / cover; /* fond général */
+      overflow: hidden;
+    }
+
+    .message {
+      position: relative;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 800px;
+      line-height: 1.6;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      color: gold; /* texte doré */
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+
+      /* --- Image + voile sombre --- */
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('arriere.jpg') no-repeat center center / cover;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: bounce 1.5s infinite alternate;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 204, 0, 0.8);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: rgba(255, 170, 0, 0.8);
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-15px); }
+    }
+
+    /* Animation des cœurs */
+    .heart {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: rgba(255,0,0,0.8);
+      transform: rotate(45deg);
+      animation: fall 5s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: rgba(255,0,0,0.8);
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -7.5px; left: 0; }
+    .heart::after { left: 7.5px; top: 0; }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Joyeux Anniversaire 🎉</h1>
+  <div class="message">
+    Pour tes 45 ans d'existence, nous souhaitons que ta journée soit Festive, Lumineuse, Exceptionnelle, Unique, Rigoureuse mais très tendre à l'intérieur.(FLEUR)<br><br>
+    Madame FAGBEMI QUENUM, toujours Exigeante, Déterminée, Winneuse (gagnante), Impétueuse mais très aimante, Généreuse, Engagée, véridique et directe (EDWIGE); Sincère, Yeux brillants de sincérité, Loyale présence dans chaque moment, Vive, Inoubliable et Enthousiaste.(SYLVIE)<br><br>
+    Santé, prospérité, paix du cœur sont nos sincères vœux.<br><br>
+    Que ta journée soit remplie d'avalanches de grâces et de bénédictions.<br><br>
+    Nous t'aimons très fort, tes frères et sœurs. Ensemble pour toujours, amis liés.<br><br>
+    Joyeux anniversaire à toi, Fleur Edwige Sylvie FAGBEMI QUENUM.
+  </div>
+  <button onclick="window.location.href='index.html'">↩ Revenir à l'accueil</button>
+
+  <script>
+    // Génération de cœurs animés
+    for (let i = 0; i < 50; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+      heart.style.width = (10 + Math.random() * 10) + "px";
+      heart.style.height = heart.style.width;
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
