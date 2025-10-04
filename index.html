@@ -71,15 +71,14 @@
   <script>
     function checkName() {
       const name = document.getElementById("nameInput").value.trim().toLowerCase();
-      const correctName = "sylvie fleur"; // ✅ prénom correct
+      const correctName = "sylvie edwige"; // ✅ prénom correct
 
       if (name === correctName) {
         window.location.href = "anniversaire.html"; // redirection vers la page 2
       } else {
-        document.getElementById("errorMsg").textContent = "Oups 😅 mauvais prénom ! Essaie encore 🎂";
+        document.getElementById("errorMsg").textContent = "😅 Essaie encore… mais souviens-toi, ce n’est pas ton anniversaire 😏";
       }
     }
   </script>
 </body>
-
 </html>
